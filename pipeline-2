@@ -8,5 +8,14 @@ pipeline {
             }
 
         }
+
+        stage('Build') {
+        when {
+           branch 'develop'
+          }
+            steps {
+                sh 'mvn clean install'
+            }
+        }
     }
 }
