@@ -25,6 +25,12 @@ pipeline {
                 echo 'Deploying application...'
             }
         }
+
+                stage('Trigger FS-1') {
+            steps {
+                build job: 'FS-1'
+            }
+        }
     }
 
     post {
