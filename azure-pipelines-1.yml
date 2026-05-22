@@ -10,7 +10,7 @@ trigger: none
 #   demands:
 #     - agent.name -equals Agent-1
 pool:
-  vmImage: ubuntu-latests
+  vmImage: ubuntu-latest
 
 stages:
   - stage: compile
