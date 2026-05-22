@@ -1,0 +1,11 @@
+trigger: none
+pool:
+  name: MyOwnPool
+  demands:
+    - agent.name -equals Agent-1
+
+stages:
+  - stage: compile
+    displayName: "Maven Compile"
+    jobs:
+      - job: maven_compile
