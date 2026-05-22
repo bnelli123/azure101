@@ -5,10 +5,12 @@
 
 trigger: none
 
+# pool:
+#   name: MyOwnPool
+#   demands:
+#     - agent.name -equals Agent-1
 pool:
-  name: MyOwnPool
-  demands:
-    - agent.name -equals Agent-1
+  vmImage: ubuntu-latests
 
 stages:
   - stage: compile
