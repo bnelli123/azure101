@@ -16,3 +16,15 @@ stages:
     jobs:
       - job: maven_compile
         steps:
+        - task: Maven@4
+          inputs:
+            azureSubscription: 'cicd'
+            mavenPomFile: 'pom.xml'
+            goals: 'compile'
+            publishJUnitResults: true
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+            javaHomeOption: 'JDKVersion'
+            mavenVersionOption: 'Default'
+            mavenAuthenticateFeed: false
+            effectivePomSkip: false
+            sonarQubeRunAnalysis: false
