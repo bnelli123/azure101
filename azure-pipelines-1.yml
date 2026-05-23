@@ -47,3 +47,12 @@ stages:
               mavenAuthenticateFeed: false
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
+  - stage: trivy_fs_scan
+    displayName: 'Trivy FS Scan'
+    jobs:
+      - job: 'TrivyFSScan'
+        displayName: 'TrivyFSScan'
+        steps:
+          - task: CmdLine@2
+            inputs:
+              script: 'trivy fs --format table -o fs.html ,'
